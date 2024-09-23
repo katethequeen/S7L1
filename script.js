@@ -45,17 +45,37 @@ function handleSubmit(event) {
       this.breed = _breed;
     }
 
-    sameOwner(currentOwnerName) {
-      if (this.ownerName === currentOwnerName.ownerName) {
-        return true;
-      }
+    sameOwner(otherPet) {
+      return this.ownerName === otherPet.ownerName;
     }
   }
-  alert("Data submitted successfully!");
-  event.target.reset();
 
   const pet = new Pet(_petName, _ownerName, _species, _breed);
   petList.push(pet);
+
+  updateList();
+
+  alert("Data submitted successfully!");
+  event.target.reset();
 }
 
-console.log(petList);
+function updateList() {
+  const ul = document.querySelector("ul");
+  ul.innerHTML = "";
+
+  for (let i = 0; i < petList.length; i++) {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+    <p>
+    Pet Name: ${petList[i].petName}, Owner Name: ${petList[i].ownerName}, Species: ${petList[i].species}, Breed: ${petList[i].breed}
+    </p>`;
+    ul.appendChild(listItem);
+
+    for (let j = 0; j < i; j++) {
+      const isSameOwner = petList[i].sameOwner(petList[j]);
+      if (isSameOwner) {
+        listItem.classList.add("same-owner");
+      }
+    }
+  }
+}

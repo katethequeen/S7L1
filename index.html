@@ -40,6 +40,18 @@
       background-color: rgb(50, 210, 50);
       cursor: pointer;
     }
+    .list-container {
+      width: 50%;
+      margin-inline: auto;
+    }
+    #list-item {
+      list-style: none;
+      border: 1px solid #000;
+      padding: 20px;
+    }
+    .same-owner {
+      background-color: rgb(226, 213, 139);
+    }
   </style>
   <body>
     <div class="content">
@@ -60,6 +72,10 @@
 
         <button type="submit">Check</button>
       </form>
+
+      <div class="list-container">
+        <ul></ul>
+      </div>
     </div>
 
     <script src="./script.js"></script>
