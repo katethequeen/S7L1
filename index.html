@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S7/L1</title>
+  </head>
+  <style>
+    body {
+      width: 100%;
+    }
+    .content {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    label {
+      font-size: 20px;
+    }
+    input {
+      width: 50%;
+      height: 30px;
+      margin-inline: auto;
+    }
+    input[type="text"] {
+      padding-left: 10px;
+      font-size: 18px;
+    }
+    button {
+      width: 15%;
+      height: 5vh;
+      font-size: 20px;
+      margin-inline: auto;
+      margin-block: 30px;
+    }
+    button:hover {
+      background-color: rgb(50, 210, 50);
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div class="content">
+      <h1>Compile The Form</h1>
+
+      <form method="post" onsubmit="handleSubmit(event)">
+        <label for="petName">Pet Name</label>
+        <input type="text" id="petName" placeholder="Your Pet Name" />
+
+        <label for="ownerName">Owner Name</label>
+        <input type="text" id="ownerName" placeholder="Your Name" />
+
+        <label for="species">Species</label>
+        <input type="text" id="species" placeholder="Specify species" />
+
+        <label for="breed">Breed</label>
+        <input type="text" id="breed" placeholder="Specify breed" />
+
+        <button type="submit">Check</button>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
